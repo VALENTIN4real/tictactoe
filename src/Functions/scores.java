@@ -1,6 +1,6 @@
 package Functions;
 
-public class scores {
+class scores {
     int x = 0;
     int o = 0;
 

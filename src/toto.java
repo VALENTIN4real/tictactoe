@@ -245,6 +245,7 @@ public class toto extends JDialog {
         toto dialog = new toto();
         dialog.pack();
         dialog.setVisible(true);
+
     }
 
 }
