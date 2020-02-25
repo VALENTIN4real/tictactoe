@@ -1,18 +1,18 @@
 import javax.swing.*;
 import java.awt.event.*;
+import Functions.scores;
 
 public class replay extends JDialog {
     private JPanel contentPane2;
     private JButton ouiButton;
     private JButton nonButton;
-    int x = 0;
-    int o = 0;
 
     public replay() {
         setContentPane(contentPane2);
         setModal(true);
         init();
     }
+
 
     private void init() {
         ouiButton.addActionListener(new ActionListener() {

@@ -1,9 +1,8 @@
 import javax.swing.*;
-
+import Functions.scores;
 
 public class toto extends JDialog {
     private JPanel contentPane;
-
     private JButton button00;
     private JButton button02;
     private JButton button01;
@@ -16,6 +15,9 @@ public class toto extends JDialog {
     private JLabel titreJeu;
     int i = 0; // tourJoueur()
     boolean fin = false;
+
+    scores s = new scores();
+
 
     public toto() {
         setContentPane(contentPane);
@@ -67,6 +69,7 @@ public class toto extends JDialog {
 
     private void finDePartie() {
         // Détermination des cas qui engendrent une fin de partie
+
         String bouton00 = button00.getText();
         String bouton01 = button01.getText();
         String bouton02 = button02.getText();
@@ -95,9 +98,10 @@ public class toto extends JDialog {
         if ((bouton00.equals("X") && bouton01.equals("X") && bouton02.equals("X")) || (bouton00.equals("O") && bouton01.equals("O") && bouton02.equals("O"))) {
             if (bouton00.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
-
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -110,8 +114,10 @@ public class toto extends JDialog {
         else if ((bouton00.equals("X") && bouton11.equals("X") && bouton22.equals("X")) || (bouton00.equals("O") && bouton11.equals("O") && bouton22.equals("O"))) {
             if (bouton00.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -126,8 +132,10 @@ public class toto extends JDialog {
         else if ((bouton00.equals("X") && bouton10.equals("X") && bouton20.equals("X")) || (bouton00.equals("O") && bouton10.equals("O") && bouton20.equals("O"))) {
             if (bouton00.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -142,8 +150,10 @@ public class toto extends JDialog {
         else if ((bouton10.equals("X") && bouton11.equals("X") && bouton12.equals("X")) || (bouton10.equals("O") && bouton11.equals("O") && bouton12.equals("O"))) {
             if (bouton10.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -158,8 +168,10 @@ public class toto extends JDialog {
         else if ((bouton01.equals("X") && bouton11.equals("X") && bouton21.equals("X")) || (bouton01.equals("O") && bouton11.equals("O") && bouton21.equals("O"))) {
             if (bouton01.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -174,8 +186,10 @@ public class toto extends JDialog {
         else if ((bouton02.equals("X") && bouton12.equals("X") && bouton22.equals("X")) || (bouton02.equals("O") && bouton12.equals("O") && bouton22.equals("O"))) {
             if (bouton02.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -190,8 +204,10 @@ public class toto extends JDialog {
         else if ((bouton02.equals("X") && bouton11.equals("X") && bouton20.equals("X")) || (bouton02.equals("O") && bouton11.equals("O") && bouton20.equals("O"))){
             if (bouton02.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -206,8 +222,10 @@ public class toto extends JDialog {
         else if ((bouton20.equals("X") && bouton21.equals("X") && bouton22.equals("X")) || (bouton20.equals("O") && bouton21.equals("O") && bouton22.equals("O"))){
             if (bouton20.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
+                s.scoreX();
             } else {
                 System.out.println("Fin de partie, O a gagné !");
+                s.scoreO();
             }
             fin = true;
             endGame();
@@ -220,6 +238,8 @@ public class toto extends JDialog {
             fin = true;
             endGame();
         }
+
+        System.out.println();
 
     }
 
