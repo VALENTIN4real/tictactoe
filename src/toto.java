@@ -1,5 +1,6 @@
 import javax.swing.*;
 
+
 public class toto extends JDialog {
     private JPanel contentPane;
 
