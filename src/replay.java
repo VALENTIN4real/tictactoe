@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.event.*;
-import Functions.scores;
 
 public class replay extends JDialog {
     private JPanel contentPane2;
