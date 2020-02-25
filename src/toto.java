@@ -17,9 +17,8 @@ public class toto extends JDialog {
     boolean fin = false;
 
     scores s = new scores();
-
-
-    public toto() {
+    
+    public toto(){
         setContentPane(contentPane);
         setModal(true);
         //perso
