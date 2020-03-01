@@ -12,16 +12,18 @@ public class toto extends JDialog {
     private JButton button21;
     private JButton button22;
     private JLabel titreJeu;
-    int i = 0; // tourJoueur()
-    boolean fin = false;
     static int x;
     static int o;
+    private JLabel scores;
+    int i = 0; // tourJoueur()
+    boolean fin = false;
 
     public toto(){
         setContentPane(contentPane);
         setModal(true);
         //perso
         init();
+        scores.setText("X : " + x + " | " + "O : " + o);
     }
 
     private void init() {
@@ -113,7 +115,7 @@ public class toto extends JDialog {
             if (bouton00.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
                 scoreX();
-            } else {
+                scores.setText(String.valueOf(x));            } else {
                 System.out.println("Fin de partie, O a gagné !");
                 scoreO();
             }
@@ -131,6 +133,8 @@ public class toto extends JDialog {
             if (bouton00.equals("X")) {
                 System.out.println("Fin de partie, X a gagné !");
                 scoreX();
+                String r = Integer.toString(x);
+                scores.setText(r);
             } else {
                 System.out.println("Fin de partie, O a gagné !");
                 scoreO();
@@ -239,7 +243,6 @@ public class toto extends JDialog {
 
     }
 
-
     private void endGame() {
         if (fin = true) {
             button00.setEnabled(false);
@@ -259,17 +262,17 @@ public class toto extends JDialog {
 
     public static void scoreX() {
         x++;
-        System.out.println(x);
+        System.out.println("Score de X : " + x);
+        System.out.println("Score de O : " + o);
     }
 
     public static void scoreO() {
         o++;
-        System.out.println(o);
+        System.out.println("Score de X : " + x);
+        System.out.println("Score de O : " + o);
     }
 
-
     public static void main(String[] args) {
-
         toto dialog = new toto();
         dialog.pack();
         dialog.setVisible(true);
