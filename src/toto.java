@@ -17,7 +17,8 @@ public class toto extends JDialog {
     private JLabel titreJeu;
     static int x;
     static int o;
-    private JLabel scores;
+    private JLabel scorex;
+    private JLabel scoreo;
     int i = 0; // tourJoueur()
     boolean fin = false;
 
@@ -27,11 +28,12 @@ public class toto extends JDialog {
         //perso
         init();
         initButtons();
-        scores.setText("X : " + x + " | " + "O : " + o);
+        scorex.setText("X : " + x);
+        scoreo.setText("O : " + o);
     }
 
     private void initBoutons(JButton bt) {
-        bt.setBackground(new Color(140,242,89));
+        bt.setBackground(new Color(204, 153, 255));
     }
 
     private void initButtons() {
