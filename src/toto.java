@@ -327,6 +327,7 @@ public class toto extends JDialog {
 
     public static void main(String[] args) {
         toto dialog = new toto();
+        dialog.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         dialog.pack();
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
