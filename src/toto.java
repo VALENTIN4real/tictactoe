@@ -27,6 +27,7 @@ public class toto extends JDialog {
     private JPanel tableau;
     int i = 0; // tourJoueur()
     boolean fin = false;
+    static String turn = "";
 
     public toto(){
         setContentPane(contentPane);
@@ -104,13 +105,20 @@ public class toto extends JDialog {
     }
 
     private void tourJoueur(JButton bt) {
-        if (i%2==0) {
-            xInCase(bt);
-            bt.setEnabled(false);
-        } else {
-            oInCase(bt);
-            bt.setEnabled(false);
+        if (turn.equals("X") || turn.equals("")) {
+            if (i % 2 == 0) {
+                xInCase(bt);
+            } else {
+                oInCase(bt);
+            }
+        } else if (turn.equals("O")){
+            if (i % 2 != 0) {
+                xInCase(bt);
+            } else {
+                oInCase(bt);
+            }
         }
+        bt.setEnabled(false);
         finDePartie();
         i++;
     }
@@ -307,14 +315,14 @@ public class toto extends JDialog {
         }
     }
 
-    private static String scoreX() {
+    private void scoreX() {
         x++;
-        return "X";
+        turn = "X";
     }
 
-    private static String scoreO() {
+    private void scoreO() {
         o++;
-        return "O";
+        turn = "O";
     }
 
     public static void main(String[] args) {
