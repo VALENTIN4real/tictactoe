@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class toto extends JDialog {
     ImageIcon croix = new ImageIcon("images/croix.png");
@@ -19,6 +21,10 @@ public class toto extends JDialog {
     static int o;
     private JLabel scorex;
     private JLabel scoreo;
+    private JButton buttonNon;
+    private JButton buttonOui;
+    private JLabel rejouer;
+    private JPanel tableau;
     int i = 0; // tourJoueur()
     boolean fin = false;
 
@@ -30,6 +36,9 @@ public class toto extends JDialog {
         initButtons();
         scorex.setText("X : " + x);
         scoreo.setText("O : " + o);
+        rejouer.setVisible(false);
+        buttonNon.setVisible(false);
+        buttonOui.setVisible(false);
     }
 
     private void initBoutons(JButton bt) {
@@ -66,6 +75,21 @@ public class toto extends JDialog {
         button21.addActionListener(e -> tourJoueur(button21));
 
         button22.addActionListener(e -> tourJoueur(button22));
+
+        buttonOui.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                toto.main(null);
+            }
+        });
+
+        buttonNon.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
         this.setResizable(false);
     }
@@ -279,8 +303,9 @@ public class toto extends JDialog {
             button21.setEnabled(false);
             button22.setEnabled(false);
 
-            dispose();
-            replay.main(null);
+            rejouer.setVisible(true);
+            buttonOui.setVisible(true);
+            buttonNon.setVisible(true);
         }
     }
 
