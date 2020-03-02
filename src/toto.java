@@ -299,5 +299,4 @@ public class toto extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
     }
-
 }
