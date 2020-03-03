@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class toto extends JDialog {
     ImageIcon croix = new ImageIcon("images/croix.png");
@@ -77,20 +75,12 @@ public class toto extends JDialog {
 
         button22.addActionListener(e -> tourJoueur(button22));
 
-        buttonOui.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                toto.main(null);
-            }
+        buttonOui.addActionListener(e -> {
+            dispose();
+            toto.main(null);
         });
 
-        buttonNon.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        buttonNon.addActionListener(e -> System.exit(0));
         this.setResizable(false);
     }
 
